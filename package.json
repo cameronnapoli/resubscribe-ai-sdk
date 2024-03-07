@@ -1,0 +1,16 @@
+{
+  "name": "resubscribe-sdk",
+  "version": "1.0.0",
+  "private": false,
+  "license": "UNLICENSED",
+  "files": [
+    "lib/**/*"
+  ],  
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "typescript": "^5.4.2"
+  }
+}
