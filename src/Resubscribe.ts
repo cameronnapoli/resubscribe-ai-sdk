@@ -3,6 +3,12 @@ interface User {
   email: string;
 };
 
+type EventType = (
+  'cancellation-unsubscribe-trial' |
+  'cancellation-unsubscribe-paid' |
+  'cancellation-billing-error'
+)
+
 class Resubscribe {
   private static apiKey: string;
 
@@ -10,7 +16,7 @@ class Resubscribe {
     Resubscribe.apiKey = apiKey;
   }
 
-  static registerEvent(eventType: string, user: User) {
+  static registerEvent(eventType: EventType, user: User) {
     // Implementation to register the event
     console.log(`Event Registered: ${eventType}`, user);
   }
