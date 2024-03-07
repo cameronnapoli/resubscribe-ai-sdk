@@ -1,10 +1,6 @@
-interface User {
-    id: string;
-    email: string;
-}
-declare class Resubscribe {
-    private static apiKey;
-    static init(apiKey: string): void;
-    static registerEvent(eventType: string, user: User): void;
-}
-export default Resubscribe;
+type EventType = ('cancellation-unsubscribe-trial' | 'cancellation-unsubscribe-paid' | 'cancellation-billing-error');
+declare const _default: {
+    init: (key: string) => void;
+    registerEvent: (event: Event, eventType: EventType) => void;
+};
+export default _default;

@@ -1,6 +1,6 @@
 # Resubscribe.ai SDK
 
-Usage:
+TypeScript usage:
 
 ```javascript
 import Resubscribe from 'resubscribe-ai';
@@ -16,4 +16,10 @@ Resubscribe.registerEvent(
   },
   'cancellation-unsubscribe-trial',
 );
+```
+
+If you're using node, change the import like so:
+
+```javascript
+const Resubscribe = require('resubscribe-ai');
 ```

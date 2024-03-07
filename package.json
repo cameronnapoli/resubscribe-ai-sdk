@@ -8,7 +8,8 @@
     "lib/**/*"
   ],  
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm run build && npm publish"
   },
   "devDependencies": {
     "@types/node": "^20.11.25",

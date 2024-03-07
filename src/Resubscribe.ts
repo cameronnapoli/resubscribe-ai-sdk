@@ -9,17 +9,22 @@ type EventType = (
   'cancellation-billing-error'
 )
 
-class Resubscribe {
-  private static apiKey: string;
+let apiKey: string | undefined;
 
-  static init(apiKey: string) {
-    Resubscribe.apiKey = apiKey;
+const init = (key: string) => {
+  apiKey = key;
+};
+
+const registerEvent = (event: Event, eventType: EventType) => {
+  if (!apiKey) {
+    console.error("API key is not initialized.");
+    return;
   }
+  // TODO: implement
+  console.log(`Event Registered: ${eventType}`, event, `with API key: ${apiKey}`);
+};
 
-  static registerEvent(eventType: EventType, user: User) {
-    // Implementation to register the event
-    console.log(`Event Registered: ${eventType}`, user);
-  }
-}
-
-export default Resubscribe;
+export default {
+  init,
+  registerEvent
+};
