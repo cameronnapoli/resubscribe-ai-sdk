@@ -1,6 +1,11 @@
+import axios from 'axios';
+
 export interface ResubUser {
-  id: string;
-  email: string;
+  /**
+   * The user id in your system.
+   */
+  userId: string;
+  email?: string;
 };
 
 export type ResubEventType = (
@@ -17,16 +22,61 @@ let apiKey: string | undefined;
 const init = ({
   apiKey: key,
 }: ResubInitOptions) => {
+  if (!key) {
+    throw new Error("Resubscribe: API key is empty.");
+  }
   apiKey = key;
 };
 
-const registerEvent = async (eventType: ResubEventType, user: ResubUser) => {
+const apiBase = 'https://api.resubscribe.ai/v1';
+
+/**
+ * Register an event with Resubscribe.
+ */
+const registerEvent = async (
+  eventType: ResubEventType,
+  user: ResubUser,
+) => {
   if (!apiKey) {
-    console.error("API key is not initialized.");
+    console.error("Resubscribe: API key is not initialized.");
     return;
   }
-  // TODO: implement
-  console.log(`Event Registered: "${eventType}" | User: "${user.id} | API key: "${apiKey.slice(0, 4)}..."`);
+  if (!user || !user.email) {
+    console.error("Resubscribe: User email is required.");
+    return;
+  }
+  // validate user email
+  const email_re = /^[^@\ ]+@[^@\ ]+\.[^@\ ]+$/;
+  if (!email_re.test(user.email)) {
+    console.error(`Resubscribe: Invalid user email "${user.email}"`);
+    return;
+  }
+
+  const url = `${apiBase}/events/register`;
+  const body = {
+    eventType,
+    user,
+  };
+  const headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${apiKey}`,
+  };
+
+  try {
+    const response = await axios.post(
+      url, 
+      body,
+      {
+        headers,
+      },
+    );
+    if (response.status < 200 || response.status >= 300) {
+      throw new Error(`Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error(`Resubscribe: Failed to register event. Error: ${error}`);
+  }
 };
 
 export default {

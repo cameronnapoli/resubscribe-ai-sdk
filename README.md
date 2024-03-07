@@ -23,5 +23,5 @@ Resubscribe.registerEvent(
 If you're using node, change the import like so:
 
 ```javascript
-const Resubscribe = require('resubscribe-ai').default;
+const Resubscribe = require('resubscribe-sdk').default;
 ```
