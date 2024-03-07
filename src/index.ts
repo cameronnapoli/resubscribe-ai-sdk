@@ -1,3 +1,3 @@
 import Resubscribe from './Resubscribe';
 
-module.exports = Resubscribe;
+export default Resubscribe;

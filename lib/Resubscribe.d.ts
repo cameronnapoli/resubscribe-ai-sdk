@@ -1,6 +1,13 @@
-type EventType = ('cancellation-unsubscribe-trial' | 'cancellation-unsubscribe-paid' | 'cancellation-billing-error');
+interface ResubUser {
+    id: string;
+    email: string;
+}
+type ResubEventType = ('cancellation-unsubscribe-trial' | 'cancellation-unsubscribe-paid' | 'cancellation-billing-error');
+interface ResubInitOptions {
+    apiKey: string;
+}
 declare const _default: {
-    init: (key: string) => void;
-    registerEvent: (event: Event, eventType: EventType) => void;
+    init: ({ apiKey: key, }: ResubInitOptions) => void;
+    registerEvent: (eventType: ResubEventType, user: ResubUser) => void;
 };
 export default _default;

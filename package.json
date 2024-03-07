@@ -1,6 +1,6 @@
 {
   "name": "resubscribe-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "license": "UNLICENSED",
   "main": "lib/index.js",
