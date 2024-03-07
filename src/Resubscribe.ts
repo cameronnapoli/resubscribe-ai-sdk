@@ -23,7 +23,7 @@ const init = ({
   apiKey: key,
 }: ResubInitOptions) => {
   if (!key) {
-    throw new Error("Resubscribe: API key is empty.");
+    console.error('Resubscribe: API key is empty.');
   }
   apiKey = key;
 };
@@ -38,11 +38,11 @@ const registerEvent = async (
   user: ResubUser,
 ) => {
   if (!apiKey) {
-    console.error("Resubscribe: API key is not initialized.");
+    console.error('Resubscribe: API key is not initialized.');
     return;
   }
   if (!user || !user.email) {
-    console.error("Resubscribe: User email is required.");
+    console.error('Resubscribe: User email is required.');
     return;
   }
   // validate user email
