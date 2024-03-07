@@ -9,7 +9,7 @@
   ],  
   "scripts": {
     "build": "tsc",
-    "publish": "npm run build && npm publish"
+    "pre-publish": "yarn build"
   },
   "devDependencies": {
     "@types/node": "^20.11.25",
