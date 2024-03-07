@@ -1,9 +1,10 @@
 {
   "name": "resubscribe-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "license": "UNLICENSED",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],  

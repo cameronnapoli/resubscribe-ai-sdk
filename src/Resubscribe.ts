@@ -1,27 +1,26 @@
-interface ResubUser {
+export interface ResubUser {
   id: string;
   email: string;
 };
 
-type ResubEventType = (
+export type ResubEventType = (
   'cancellation-unsubscribe-trial' |
   'cancellation-unsubscribe-paid' |
   'cancellation-billing-error'
 )
 
-interface ResubInitOptions {
+export interface ResubInitOptions {
   apiKey: string;
 }
 
 let apiKey: string | undefined;
-
 const init = ({
   apiKey: key,
 }: ResubInitOptions) => {
   apiKey = key;
 };
 
-const registerEvent = (eventType: ResubEventType, user: ResubUser) => {
+const registerEvent = async (eventType: ResubEventType, user: ResubUser) => {
   if (!apiKey) {
     console.error("API key is not initialized.");
     return;
@@ -32,5 +31,5 @@ const registerEvent = (eventType: ResubEventType, user: ResubUser) => {
 
 export default {
   init,
-  registerEvent
+  registerEvent,
 };
