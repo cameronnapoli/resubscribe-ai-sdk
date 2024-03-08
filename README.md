@@ -16,10 +16,13 @@ Resubscribe.init({
 
 // register an event
 Resubscribe.registerEvent(
-  'cancellation-unsubscribe-paid',
   {
-    id: '123',
-    email: '',
+    id: 'event_12346789',
+    type: 'cancellation-unsubscribe-paid',
+  },
+  {
+    userId: 'user_987654321',
+    email: 'example@acme.org',
   },
 );
 ```
