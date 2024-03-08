@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+export interface ResubEvent {
+  /**
+   * The event id from your system.
+   */
+  id: string;
+  type: ResubEventType;
+}
+
 export interface ResubUser {
   /**
    * The user id in your system.
@@ -34,7 +42,7 @@ const apiBase = 'https://api.resubscribe.ai/v1';
  * Register an event with Resubscribe.
  */
 const registerEvent = async (
-  eventType: ResubEventType,
+  event: ResubEvent,
   user: ResubUser,
 ) => {
   if (!apiKey) {
@@ -54,7 +62,7 @@ const registerEvent = async (
 
   const url = `${apiBase}/events/register`;
   const body = {
-    eventType,
+    event,
     user,
   };
   const headers = {

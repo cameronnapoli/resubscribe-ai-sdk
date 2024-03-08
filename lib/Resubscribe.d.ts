@@ -1,3 +1,10 @@
+export interface ResubEvent {
+    /**
+     * The event id from your system.
+     */
+    id: string;
+    type: ResubEventType;
+}
 export interface ResubUser {
     /**
      * The user id in your system.
@@ -11,6 +18,6 @@ export interface ResubInitOptions {
 }
 declare const _default: {
     init: ({ apiKey: key, }: ResubInitOptions) => void;
-    registerEvent: (eventType: ResubEventType, user: ResubUser) => Promise<void>;
+    registerEvent: (event: ResubEvent, user: ResubUser) => Promise<void>;
 };
 export default _default;

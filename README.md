@@ -1,6 +1,10 @@
 # Resubscribe.ai SDK
 
-TypeScript usage:
+The official TypeScript SDK for [Resubscribe](https://resubscribe.ai/).
+
+## Usage
+
+TypeScript:
 
 ```javascript
 import Resubscribe from 'resubscribe-sdk';
@@ -20,7 +24,7 @@ Resubscribe.registerEvent(
 );
 ```
 
-If you're using node, change the import like so:
+Node.js:
 
 ```javascript
 const Resubscribe = require('resubscribe-sdk').default;
