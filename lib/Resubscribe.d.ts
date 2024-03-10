@@ -4,6 +4,7 @@ export interface ResubEvent {
      */
     id: string;
     type: ResubEventType;
+    revenueCat?: Record<string, any>;
 }
 export interface ResubUser {
     /**
