@@ -1,12 +1,18 @@
 {
   "name": "resubscribe-sdk",
-  "version": "1.0.10",
+  "description": "Resubscribe.ai SDK for TypeScript",
+  "version": "1.0.11",
   "private": false,
   "license": "UNLICENSED",
   "author": "Cameron Napoli",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "keywords": [],
+  "keywords": [
+    "resubscribe",
+    "ai",
+    "churn",
+    "retention"
+  ],
   "files": [
     "lib/**/*"
   ],

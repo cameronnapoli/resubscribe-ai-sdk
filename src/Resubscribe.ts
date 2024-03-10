@@ -22,7 +22,8 @@ export type ResubEventType = (
   'cancellation-billing-error' |
   'cancellation-price-increase' |
   'cancellation-customer-support' |
-  'cancellation-unknown'
+  'cancellation-unknown' |
+  'test'
 )
 
 export interface ResubInitOptions {

@@ -12,7 +12,7 @@ export interface ResubUser {
     userId: string;
     email?: string;
 }
-export type ResubEventType = ('cancellation-unsubscribe-trial' | 'cancellation-unsubscribe-paid' | 'cancellation-billing-error' | 'cancellation-price-increase' | 'cancellation-customer-support' | 'cancellation-unknown');
+export type ResubEventType = ('cancellation-unsubscribe-trial' | 'cancellation-unsubscribe-paid' | 'cancellation-billing-error' | 'cancellation-price-increase' | 'cancellation-customer-support' | 'cancellation-unknown' | 'test');
 export interface ResubInitOptions {
     apiKey: string;
 }
