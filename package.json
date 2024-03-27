@@ -1,6 +1,6 @@
 {
   "name": "resubscribe-sdk",
-  "description": "Resubscribe.ai SDK for TypeScript",
+  "description": "Resubscribe SDK for TypeScript",
   "version": "1.0.13",
   "private": false,
   "license": "UNLICENSED",

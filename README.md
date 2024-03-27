@@ -1,4 +1,4 @@
-# Resubscribe.ai SDK
+# Resubscribe SDK
 
 The official TypeScript SDK for [Resubscribe](https://resubscribe.ai/).
 
