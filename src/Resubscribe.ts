@@ -81,7 +81,7 @@ const getLink = async (
     if (response.status < 200 || response.status >= 300) {
       throw new Error(`Status: ${response.status}`);
     } else {
-      return response.data;
+      return response.data; 
     }
   } catch (error) {
     console.error(`Resubscribe: Failed to get link. Error: ${error}`);
