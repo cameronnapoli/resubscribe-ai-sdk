@@ -44,6 +44,51 @@ const init = ({
 const apiBase = 'https://api.resubscribe.ai/v1';
 
 /**
+ * Get a user interview link from Resubscribe.
+ */
+const getLink = async (
+  event: ResubEvent,
+  user: ResubUser,
+) => {
+  if (!apiKey) {
+    console.error('Resubscribe: API key is not initialized.');
+    return;
+  }
+  if (!user || !user.userId) {
+    console.error('Resubscribe: User ID is required.');
+    return;
+  }
+
+  const url = `${apiBase}/link/getLinkByUser`;
+  const body = {
+    event,
+    user,
+  };
+  const headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${apiKey}`,
+  };
+
+  try {
+    const response = await axios.post(
+      url, 
+      body,
+      {
+        headers,
+      },
+    );
+    if (response.status < 200 || response.status >= 300) {
+      throw new Error(`Status: ${response.status}`);
+    } else {
+      return response.data;
+    }
+  } catch (error) {
+    console.error(`Resubscribe: Failed to get link. Error: ${error}`);
+  }
+};
+
+/**
  * Register an event with Resubscribe.
  */
 const registerEvent = async (
@@ -95,4 +140,5 @@ const registerEvent = async (
 export default {
   init,
   registerEvent,
+  getLink,
 };
