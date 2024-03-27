@@ -4,6 +4,25 @@ The official TypeScript SDK for [Resubscribe](https://resubscribe.ai/).
 
 ## Usage
 
+### Direct Link
+
+Directly link your users to Resubscribe.
+
+```javascript
+import Resubscribe from 'resubscribe-sdk';
+
+const url = await Resubscribe.getLink({
+  email: 'example@acme.org',
+  userId: 'user_987654321',
+});
+
+// add url to an email, push notification, etc.
+```
+
+### Cancellation Events
+
+Send an email to your users when they cancel their subscription.
+
 TypeScript:
 
 ```javascript
