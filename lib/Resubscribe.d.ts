@@ -20,5 +20,6 @@ export interface ResubInitOptions {
 declare const _default: {
     init: ({ apiKey: key, }: ResubInitOptions) => void;
     registerEvent: (event: ResubEvent, user: ResubUser) => Promise<void>;
+    getLink: (user: ResubUser) => Promise<string | null>;
 };
 export default _default;
