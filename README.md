@@ -1,4 +1,4 @@
-# Resubscribe SDK
+# Resubscribe SDK [DEPRECATED]
 
 The official TypeScript SDK for [Resubscribe](https://resubscribe.ai/).
 
